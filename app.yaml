@@ -1,0 +1,40 @@
+application: gampps-med-practice
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static/(.*)/detect-browser
+  static_files: static/\1/detect-browser
+  upload: static/(.*)/detect-browser
+  mime_type: text/javascript
+
+- url: /users/(..)
+  static_files: static/users/\1/index.html
+  upload: static/users/(.*)/index.html
+  mime_type: text/html
+
+- url: /users
+  static_files: static/users/en/build/index.html
+  upload: static/users/en/build/index.html
+  mime_type: text/html
+
+- url: /
+  static_files: static/users/en/build/index.html
+  upload: static/users/en/build/index.html
+  mime_type: text/html
+  
+- url: /static
+  static_dir: static
+  
+- url: /mailtest
+  script: main.python
+
+- url: /mailer
+  script: main.python
+
+- url: /users
+  static_dir: static/users
+
+- url: /.*
+  script: main.py
