@@ -27,7 +27,7 @@ class Party(polymodel.PolyModel):
   religion_id = db.IntegerProperty(required=False)
   living_arrangement_id = db.IntegerProperty(required=False)
   primary_care_physician_id = db.IntegerProperty(required=False)
-  type = db.StringProperty(required=False, Indexed=True)
+  type = db.StringProperty(required=False, indexed=True)
   first_name = db.StringProperty(required=False, indexed=True)
   middle_name = db.StringProperty(required=False)
   last_name = db.StringProperty(required=False, indexed=True)
